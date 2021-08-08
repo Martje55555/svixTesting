@@ -9,7 +9,7 @@ server.use(express.json());
 
 const svix = new Svix(API_KEY);
 
-// cretates application per user
+// creates application per user
 //const app = await svix.application.create({ "uid": "unique_id", "name": "test_1" });
 //const app = 'app_1wNBs3UwwspFo4qZf6qxSs90Jgr'
 
