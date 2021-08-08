@@ -1,0 +1,979 @@
+{
+	"info": {
+		"_postman_id": "4cad0a5c-54da-4605-bfde-977c95acd316",
+		"name": "Svix Testing Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Applications",
+			"item": [
+				{
+					"name": "List Applications",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/?iterator=&limit=50",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								""
+							],
+							"query": [
+								{
+									"key": "iterator",
+									"value": "",
+									"description": "string (iterator)"
+								},
+								{
+									"key": "limit",
+									"value": "50",
+									"description": "integer(limit) Default: 50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Application",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Application",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"uid\": \"unique-app-identifier\",\n  \"name\": \"My first application\",\n  \"rateLimit\": 1000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Application",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"uid\": \"unique-app-identifier_1\",\n\"name\": \"Test_One\",\n\"rateLimit\": 1000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Application",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event Type",
+			"item": [
+				{
+					"name": "List Event Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/event-type/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event-type",
+								""
+							],
+							"query": [
+								{
+									"key": "iterator",
+									"value": null,
+									"description": "sring(iterator)",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "integer(limit) Default:50",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Event Type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"description\": \"A user has signed up\",\n  \"name\": \"user.signup\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.svix.com/api/v1/event-type/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event-type",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event Type",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"description\": \"A user has signed up\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.svix.com/api/v1/event-type/{event_type_name}/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event-type",
+								"{event_type_name}",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event Type",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/event-type/{event_type_name}/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event-type",
+								"{event_type_name}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Get Dashboard Access",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/auth/dashboard-access/{uid_or_app_id}/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"dashboard-access",
+								"{uid_or_app_id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/auth/logout/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endpoint",
+			"item": [
+				{
+					"name": "List Endpoints",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/endpoint/?limit=50",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"endpoint",
+								""
+							],
+							"query": [
+								{
+									"key": "iterator",
+									"value": null,
+									"description": "string (iterator)",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "50",
+									"description": "limit default: 50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/endpoint/{endpoint_id}/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"endpoint",
+								"{endpoint_id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Endpoint Secret",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/endpoint/{endpoint_id}/secret/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"endpoint",
+								"{endpoint_id}",
+								"secret",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Endpoint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"url\": \"https://example.com/webhook/\",\n  \"version\": 1,\n  \"description\": \"An example endpoint name\",\n  \"disabled\": false,\n  \"rateLimit\": 1000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/endpoint/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"endpoint",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Endpoint",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"url\": \"https://example.com/webhook/\",\n  \"version\": 1,\n  \"description\": \"An example endpoint name\",\n  \"disabled\": false,\n  \"rateLimit\": 1000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/endpoint/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"endpoint",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Endpoint",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"url\": \"https://example.com/webhook/\",\n  \"version\": 1,\n  \"description\": \"An example endpoint name\",\n  \"disabled\": false,\n  \"rateLimit\": 1000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/endpoint/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"endpoint",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message",
+			"item": [
+				{
+					"name": "List Messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/msg/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"msg",
+								""
+							],
+							"query": [
+								{
+									"key": "iterator",
+									"value": null,
+									"description": "string(iterator)",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "50",
+									"description": "limit default:50",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Message",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/msg/{msg_id}/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"msg",
+								"{msg_id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"eventType\": \"invoice.paid\",\n  \"payload\": {\n    \"status\": \"successful\",\n    \"message\": \"test message #2\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/msg/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"msg",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message Attempt",
+			"item": [
+				{
+					"name": "List Attempted Messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/endpoint/{endpoint_id}/msg/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"endpoint",
+								"{endpoint_id}",
+								"msg",
+								""
+							],
+							"query": [
+								{
+									"key": "iterator",
+									"value": null,
+									"description": "string(iterator)",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "50",
+									"description": "limit default:50",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": null,
+									"description": "integer (Message Status) Success = 0, Pending = 1, Fail = 2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Attempted Destinations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/msg/{msg_id}/endpoint/?iterator&limit=50",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"msg",
+								"{msg_id}",
+								"endpoint",
+								""
+							],
+							"query": [
+								{
+									"key": "iterator",
+									"value": null,
+									"description": "string (iterator)"
+								},
+								{
+									"key": "limit",
+									"value": "50",
+									"description": "limit default: 50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Attempts For Endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/msg/{msg_id}/endpoint/{endpoint_id}/attempt/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"msg",
+								"{msg_id}",
+								"endpoint",
+								"{endpoint_id}",
+								"attempt",
+								""
+							],
+							"query": [
+								{
+									"key": "iterator",
+									"value": null,
+									"description": "string (iterator)",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "Default:50 ",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": null,
+									"description": "integer Success = 0, Pending = 1, Fail = 2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Attempts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/msg/{msg_id}/attempt/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"msg",
+								"{msg_id}",
+								"attempt",
+								""
+							],
+							"query": [
+								{
+									"key": "iterator",
+									"value": null,
+									"description": "iterator",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "50",
+									"description": "Default:50",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": null,
+									"description": "Success = 0, Pending = 1, Fail = 2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Attempt",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/msg/{msg_id}/attempt/{attempt_id}/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"msg",
+								"{msg_id}",
+								"attempt",
+								"{attempt_id}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend Webhook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/app/{uid_or_app_id}/msg/{msg_id}/endpoint/{endpoint_id}/resend/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"app",
+								"{uid_or_app_id}",
+								"msg",
+								"{msg_id}",
+								"endpoint",
+								"{endpoint_id}",
+								"resend",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.svix.com/api/v1/health/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"svix",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"health",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "testsk_lsUI7ybcfkB_nY1z7vpLFsmt4ymYvINw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
